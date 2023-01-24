@@ -37,8 +37,8 @@ class UserProfilesTableSeeder extends Seeder
             1 => 
             array (
                 'id' => 2,
-                'firstname' => 'rexor',
-                'lastname' => 'miravite',
+                'firstname' => 'Rexor',
+                'lastname' => 'Miravite',
                 'middlename' => 'A',
                 'suffix' => NULL,
                 'gender' => 'M',
@@ -52,9 +52,9 @@ class UserProfilesTableSeeder extends Seeder
             2 => 
             array (
                 'id' => 3,
-                'firstname' => 'rey',
-                'lastname' => 'reyes',
-                'middlename' => 's',
+                'firstname' => 'Rey',
+                'lastname' => 'Reyes',
+                'middlename' => 'S',
                 'suffix' => NULL,
                 'gender' => 'M',
                 'mobile' => '09123456987',
@@ -68,8 +68,8 @@ class UserProfilesTableSeeder extends Seeder
             array (
                 'id' => 4,
                 'firstname' => 'Louie Virgil',
-                'lastname' => 'gallardo',
-                'middlename' => 'a',
+                'lastname' => 'Gallardo',
+                'middlename' => 'A',
                 'suffix' => NULL,
                 'gender' => 'M',
                 'mobile' => '09321654987',
@@ -83,8 +83,8 @@ class UserProfilesTableSeeder extends Seeder
             array (
                 'id' => 5,
                 'firstname' => 'Maria Adeliza',
-                'lastname' => 'deles',
-                'middlename' => 'f',
+                'lastname' => 'Deles',
+                'middlename' => 'F',
                 'suffix' => NULL,
                 'gender' => 'F',
                 'mobile' => '09321654788',

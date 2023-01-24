@@ -133,7 +133,7 @@
                         <label class="input-group-text">Office <span v-if="form.errors" v-text="form.errors['hardbounds.'+index+'.office_id']" class="haveerror"></span> </label>
                         <select v-model="field.office_id" class="form-select form-select-sm" style="width: 17%;">
                             <option value="" selected disabled>Select Office</option>
-                            <option :value="dept.id" v-for="dept in offices" v-bind:key="dept.id">{{dept.name}}</option>
+                            <option :value="dept.id" v-for="dept in offices_selected" v-bind:key="dept.id">{{dept.name}}</option>
                         </select>
                         <label class="input-group-text">Is Borrowable? <span v-if="form.errors" v-text="form.errors['hardbounds.'+index+'.is_borrowable']" class="haveerror"></span></label>
                         <select v-model="field.is_borrowable" class="form-select form-select-sm" style="width: 7%;">
@@ -199,7 +199,8 @@ import Name from "./Name.vue";
                 result_r: '',
                 result_p: '',
                 options: [],
-                del: true
+                del: true,
+                offices_selected: []
             }
         },
 
@@ -212,6 +213,10 @@ import Name from "./Name.vue";
                         this.thesis.hardbounds = [];
                     }
                 }
+            },
+            "thesis.department": function (newVal) {
+                // console.log(newVal.department_id);
+                this.offices_selected = this.offices.filter(x => x.department_id === newVal.id);
             },
         },
 

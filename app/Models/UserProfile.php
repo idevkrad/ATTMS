@@ -36,16 +36,19 @@ class UserProfile extends Model
         return $this->belongsTo('App\Models\Course', 'course_id', 'id');
     }
 
-    public function getFirstnameAttribute($value){
-        return ucwords($value);
+    public function setFirstnameAttribute($value)
+    {
+        $this->attributes['firstname'] = ucwords(strtolower($value));
     }
 
-    public function getLastnameAttribute($value){
-        return ucwords($value);
+    public function setLastnameAttribute($value)
+    {
+        $this->attributes['lastname'] = ucwords(strtolower($value));
     }
 
-    public function getMiddlenameAttribute($value){
-        return ucwords($value);
+    public function setMiddlenameAttribute($value)
+    {
+        $this->attributes['middlename'] = ucwords(strtolower($value));
     }
 
     // public function getBirthdayAttribute($value)

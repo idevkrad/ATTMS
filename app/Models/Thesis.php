@@ -93,7 +93,7 @@ class Thesis extends Model
         }
 
 
-        $thesis = $query->create(array_merge($request, ['attachment' => $file_path,'code' => $code,'status_id'=>1 ,'user_id' => \Auth::user()->id]));
+        $thesis = $query->create(array_merge($request, ['attachment' => $file_path,'code' => $code,'status_id' => 1 ,'user_id' => \Auth::user()->id]));
         $thesis->adviser()->create($request);
      
         foreach($request['researchers'] as $researcher) {

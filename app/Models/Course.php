@@ -13,4 +13,9 @@ class Course extends Model
     {
         return $this->hasMany('App\Models\UserProfile', 'course_id');
     } 
+
+    public function department()
+    {
+        return $this->belongsTo('App\Models\Department', 'department_id', 'id');
+    }
 }

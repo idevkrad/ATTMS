@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Registration;
 use App\Models\UserProfile;
 use App\Models\UserEmployee;
 use Illuminate\Http\Request;
@@ -26,6 +27,23 @@ class UserController extends Controller
                         $query->where('username', 'LIKE', "%{$keyword}%")->whereNotIn('role',['Super Administrator']);
                     });
                 })
+                ->when($request->department, function ($query, $department) {
+                    $query->whereHas('profile',function ($query) use ($department) {
+                        $query->whereHas('department',function ($query) use ($department) {
+                            $query->where('id',$department);
+                        });
+                    });
+                })
+                ->when($request->course, function ($query, $course) {
+                    $query->whereHas('profile',function ($query) use ($course) {
+                        $query->whereHas('course',function ($query) use ($course) {
+                            $query->where('id',$course);
+                        });
+                    });
+                })
+                ->when($request->role, function ($query, $role) {
+                    $query->where('role',$role);
+                })
                 ->whereHas('profile',function ($query){
                     $query->orderBy('lastname','DESC');
                 })
@@ -42,7 +60,11 @@ class UserController extends Controller
     public function store(UserRequest $request)
     { 
         $data = \DB::transaction(function () use ($request){
-            return $data = User::new($request->all());
+            $data = User::new($request->all());
+            if($request->type == 'register'){
+                Registration::where('id',$request->id)->delete();
+            }
+            return $data;
         });
 
         return back()->with([
@@ -91,28 +113,6 @@ class UserController extends Controller
 
     public function show($type){
         return inertia('Employees/Import');
-    }
-
-    public function edit($type,Request $request){
-        if($type == 'roles'){
-            $this->roles($request);
-        }else{
-            $this->groups($request);
-        }
-    }
-
-    public function roles($request)
-    {       
-        $roles =$request->roles;
-        $data = User::findOrFail($request->id);
-        $data->roles()->sync($roles);
-    }
-
-    public function groups($request)
-    {     
-        $groups =$request->groups;
-        $data = User::findOrFail($request->id);
-        $data->groups()->sync($groups);
     }
 
 }

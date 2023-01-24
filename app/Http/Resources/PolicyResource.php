@@ -22,6 +22,7 @@ class PolicyResource extends JsonResource
             'borrow_time' => $this->borrow_time,
             'borrow' => ($this->is_borrowable) ? ($this->borrow_count == 0) ? 'No Maximum Days' : 'Limited to '.$this->borrow_count.' '.$b_type : 'Not Available',
             'department' => $this->department,
+            'is_within' => $this->is_within,
             'updated_at' => $this->updated_at
         ];
     }

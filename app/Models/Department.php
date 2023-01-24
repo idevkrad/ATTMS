@@ -13,4 +13,14 @@ class Department extends Model
     {
         return $this->hasMany('App\Models\UserProfile', 'department_id');
     } 
+
+    public function courses()
+    {
+        return $this->hasMany('App\Models\Course', 'department_id');
+    } 
+
+    public function policy()
+    {
+        return $this->hasOne('App\Models\Policy', 'department_id');
+    } 
 }

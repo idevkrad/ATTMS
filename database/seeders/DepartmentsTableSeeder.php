@@ -23,7 +23,7 @@ class DepartmentsTableSeeder extends Seeder
             array (
                 'id' => 1,
                 'name' => 'Computer Science Department',
-                'shortcut' => 'CSD',
+                'shortcut' => 'CS',
                 'is_active' => 1,
                 'created_at' => '2023-01-17 21:47:14',
                 'updated_at' => '2023-01-17 21:47:14',
@@ -32,7 +32,7 @@ class DepartmentsTableSeeder extends Seeder
             array (
                 'id' => 2,
                 'name' => 'Engineering Department',
-                'shortcut' => 'n/a',
+                'shortcut' => 'ENG',
                 'is_active' => 1,
                 'created_at' => '2023-01-17 21:47:47',
                 'updated_at' => '2023-01-17 21:47:47',
@@ -41,7 +41,7 @@ class DepartmentsTableSeeder extends Seeder
             array (
                 'id' => 3,
                 'name' => 'Mathematics Department',
-                'shortcut' => 'n/a',
+                'shortcut' => 'MATH',
                 'is_active' => 1,
                 'created_at' => '2023-01-17 21:48:05',
                 'updated_at' => '2023-01-17 21:48:05',
@@ -50,7 +50,7 @@ class DepartmentsTableSeeder extends Seeder
             array (
                 'id' => 4,
                 'name' => 'Natural Sciences Department',
-                'shortcut' => 'n/a',
+                'shortcut' => 'NS',
                 'is_active' => 1,
                 'created_at' => '2023-01-17 21:48:22',
                 'updated_at' => '2023-01-17 21:48:22',

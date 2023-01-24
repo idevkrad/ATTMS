@@ -201,7 +201,6 @@
 
             edit(list){
                 this.user = list;
-                console.log(list);
                 this.showModal = true;
                 this.editable = true;
             },

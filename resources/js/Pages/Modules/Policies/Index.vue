@@ -34,11 +34,12 @@
                         <thead class="thead-light">
                             <tr class="font-size-11">
                                 <th style="width: 20%;" class="text-center">Department</th>
-                                <th style="width: 20%;" class="text-center">Is Borrowable</th>
-                                <th style="width: 20%;" class="text-center">Borrow Duration</th>
-                                <th style="width: 20%;" class="text-center">Is Viewable</th>
-                                <th style="width: 20%;" class="text-center">View Duration</th>
-                                <th style="width: 10%;" class="text-end"></th>
+                                <th style="width: 15%;" class="text-center">Is Borrowable</th>
+                                <th style="width: 15%;" class="text-center">Borrow Duration</th>
+                                <th style="width: 15%;" class="text-center">Is Viewable</th>
+                                <th style="width: 15%;" class="text-center">View Duration</th>
+                                <th style="width: 15%;" class="text-center">Within Premises</th>
+                                <th style="width: 5%;" class="text-end"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -57,6 +58,10 @@
                                     <span v-else class="badge bg-danger fs-11">Disabled</span>
                                 </td>
                                 <td class="text-center">{{list.view}}</td>
+                                <td class="text-center">
+                                    <span v-if="list.is_within == 1" class="badge bg-danger fs-11">Inside Only</span>
+                                    <span v-else class="badge bg-success fs-11">Allowed Outside</span>
+                                </td>
                                 <td class="text-end">
                                     <a v-b-tooltip.hover title="Edit User" class="me-3 text-warning" @click="edit(list)"><i class='bx bx-edit-alt' ></i></a>
                                 </td>

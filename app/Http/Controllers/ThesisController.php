@@ -32,8 +32,8 @@ class ThesisController extends Controller
         }
     }
 
-    public function store(ThesisRequest $request){
-        ini_set('memory_limit','10240M');
+    public function store(ThesisRequest $request)
+    {
         $data = \DB::transaction(function () use ($request){
             return $data = Thesis::new($request->all());
         });

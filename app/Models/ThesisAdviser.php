@@ -13,7 +13,7 @@ class ThesisAdviser extends Model
 
     public function thesis()
     {
-        return $this->belongsTo('App\Models\Theses', 'thesis_id', 'id');
+        return $this->belongsTo('App\Models\Thesis', 'thesis_id', 'id');
     }
 
     public function name()

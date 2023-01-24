@@ -38,7 +38,7 @@ class UsersTableSeeder extends Seeder
             array (
                 'id' => 2,
                 'username' => '120000',
-                'email' => 'REXOR@GMAIL.COM',
+                'email' => 'rexor@gmail.com',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$z0VWF5/vGkL13f5Q.rBuPOQFrs8KdjAzQkLtE8UOclceMsXbP8tTa',
                 'avatar' => 'avatar.jpg',

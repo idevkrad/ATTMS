@@ -13,21 +13,13 @@ class Name extends Model
         'firstname', 'lastname', 'is_researcher'
     ];
 
-    public function getFirstnameAttribute($value){
-        return ucwords($value);
-    }
-
-    public function getLastnameAttribute($value){
-        return ucwords($value);
-    }
-
     public function setFirstnameAttribute($value)
     {
-        $this->attributes['firstname'] = ucwords($value);
+        $this->attributes['firstname'] = ucwords(strtolower($value));
     }
 
     public function setLastnameAttribute($value)
     {
-        $this->attributes['lastname'] = ucwords($value);
+        $this->attributes['lastname'] = ucwords(strtolower($value));
     }
 }

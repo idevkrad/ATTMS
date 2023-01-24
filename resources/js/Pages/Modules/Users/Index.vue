@@ -141,6 +141,10 @@ export default {
         },
         department(newVal){
             this.listCourse = this.courses.filter(x => x.department_id === newVal);
+            if(newVal == ''){
+            this.course = '';
+            this.fetch();
+            }
         }
     },
 

@@ -39,7 +39,11 @@ class AuthenticatedSessionController extends Controller
 
 
         if(\Auth::user()->is_active){
-            return redirect()->intended(RouteServiceProvider::HOME);
+            if(\Auth::user()->role == 'Student'){
+                return redirect('/');
+            }else{
+                return redirect()->intended(RouteServiceProvider::HOME);
+            }
         }else{
             return back()->withErrors([
                 'email' => 'Account Locked, Please contact administrator.',

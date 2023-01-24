@@ -23,6 +23,7 @@ return new class extends Migration
             $table->boolean('is_viewable')->default(0);
             $table->integer('view_count')->default(0);
             $table->string('view_time',20)->nullable();
+            $table->boolean('is_within')->default(0);
             $table->tinyInteger('department_id')->unsigned()->nullable();
             $table->foreign('department_id')->references('id')->on('departments')->onDelete('cascade');
             $table->timestamps();

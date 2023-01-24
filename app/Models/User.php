@@ -75,7 +75,7 @@ class User extends Authenticatable
     }
 
     public function scopeNew($query, $request){
-        $user = $query->create(array_merge($request, ['password' => bcrypt('dost9ict')]));
+        $user = $query->create(array_merge($request, ['password' => bcrypt('adzuattms')]));
         $user->profile()->create($request);
         return $user;
     }
@@ -83,6 +83,11 @@ class User extends Authenticatable
     public function scopeImage($query, $request){
         $user = $this->storeImage($request);
         return $user;
+    }
+
+    public function setEmailAttribute($value)
+    {
+        $this->attributes['email'] = strtolower($value);
     }
 
     public function getUpdatedAtAttribute($value)
