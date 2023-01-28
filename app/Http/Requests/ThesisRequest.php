@@ -34,7 +34,7 @@ class ThesisRequest extends FormRequest
             'hardbounds' => 'required_if:has_hardbound,true|array|min:1',
             'tags' => 'required|array|min:1',
             'files' => 'sometimes|nullable',
-            'files.*' => 'mimes:pdf|max:10000'
+            'files.*' => 'mimes:pdf|max:20000'
             // 'course_id' => 'sometimes|required_if:role,Student',
             // 'course_id' => 'sometimes|required_if:role,Student',
             // 'course_id' => 'sometimes|required_if:role,Student',
