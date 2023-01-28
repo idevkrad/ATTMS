@@ -44,11 +44,11 @@ class DatabaseSeeder extends Seeder
         $this->call(DropdownsTableSeeder::class);
         $this->call(TagsTableSeeder::class);
         $this->call(NamesTableSeeder::class);
-        // $this->call(ThesesTableSeeder::class);
-        // $this->call(ThesisAdvisersTableSeeder::class);
-        // $this->call(ThesisHardboundsTableSeeder::class);
-        // $this->call(ThesisPanelistsTableSeeder::class);
-        // $this->call(ThesisResearchersTableSeeder::class);
-        // $this->call(ThesisTagsTableSeeder::class);
+        $this->call(ThesesTableSeeder::class);
+        $this->call(ThesisAdvisersTableSeeder::class);
+        $this->call(ThesisHardboundsTableSeeder::class);
+        $this->call(ThesisPanelistsTableSeeder::class);
+        $this->call(ThesisResearchersTableSeeder::class);
+        $this->call(ThesisTagsTableSeeder::class);
     }
 }

@@ -26,9 +26,9 @@ class ThesisHardboundsTableSeeder extends Seeder
                 'is_borrowable' => 1,
                 'office_id' => 3,
                 'thesis_id' => 1,
-                'is_available' => 1,
+                'is_available' => 0,
                 'created_at' => '2023-01-24 16:29:52',
-                'updated_at' => '2023-01-24 16:29:52',
+                'updated_at' => '2023-01-24 16:37:20',
             ),
             1 => 
             array (
@@ -51,6 +51,17 @@ class ThesisHardboundsTableSeeder extends Seeder
                 'is_available' => 1,
                 'created_at' => '2023-01-24 16:33:59',
                 'updated_at' => '2023-01-24 16:33:59',
+            ),
+            3 => 
+            array (
+                'id' => 4,
+                'location' => 'cabinet 1',
+                'is_borrowable' => 1,
+                'office_id' => 6,
+                'thesis_id' => 4,
+                'is_available' => 1,
+                'created_at' => '2023-01-26 13:37:49',
+                'updated_at' => '2023-01-26 13:37:49',
             ),
         ));
         

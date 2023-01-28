@@ -59,6 +59,22 @@ class ThesisPanelistsTableSeeder extends Seeder
                 'created_at' => '2023-01-24 16:33:59',
                 'updated_at' => '2023-01-24 16:33:59',
             ),
+            5 => 
+            array (
+                'id' => 6,
+                'thesis_id' => 4,
+                'panelist_id' => 16,
+                'created_at' => '2023-01-26 13:37:49',
+                'updated_at' => '2023-01-26 13:37:49',
+            ),
+            6 => 
+            array (
+                'id' => 7,
+                'thesis_id' => 4,
+                'panelist_id' => 15,
+                'created_at' => '2023-01-26 13:37:49',
+                'updated_at' => '2023-01-26 13:37:49',
+            ),
         ));
         
         

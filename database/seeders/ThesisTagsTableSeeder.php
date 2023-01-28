@@ -75,6 +75,14 @@ class ThesisTagsTableSeeder extends Seeder
                 'created_at' => '2023-01-24 16:33:59',
                 'updated_at' => '2023-01-24 16:33:59',
             ),
+            7 => 
+            array (
+                'id' => 8,
+                'thesis_id' => 4,
+                'tag_id' => 10,
+                'created_at' => '2023-01-26 13:37:49',
+                'updated_at' => '2023-01-26 13:37:49',
+            ),
         ));
         
         

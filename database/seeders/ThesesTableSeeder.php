@@ -77,6 +77,22 @@ As a result, the need for a new format in which the logs of the employees are sa
                 'created_at' => '2023-01-24 16:33:59',
                 'updated_at' => '2023-01-24 16:33:59',
             ),
+            3 => 
+            array (
+                'id' => 4,
+                'code' => 'NS-2023-01-0001',
+            'title' => 'Antibacterial Activity Of Talisay (Terminalia Catappa Linnaeus) Fruit Extracts  At Different Stages Of Maturity',
+            'abstract' => 'Stages of maturity in plant parts is an underrepresented variable in extract acquisition, which was highlighted by Akharaiyi et al. (2011) to have significance  in antibacterial activity. With ethanol being a more effective extracting solvent, particularly in bringing out phenolic compounds, this study utilized ethanolic',
+                'publication' => 2022,
+                'attachment' => NULL,
+                'has_hardbound' => 1,
+                'has_cd' => 0,
+                'department_id' => 4,
+                'status_id' => 1,
+                'user_id' => 1,
+                'created_at' => '2023-01-26 13:37:49',
+                'updated_at' => '2023-01-26 13:37:49',
+            ),
         ));
         
         

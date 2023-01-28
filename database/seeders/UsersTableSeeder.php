@@ -94,6 +94,21 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-01-18 14:06:50',
                 'updated_at' => '2023-01-18 14:06:50',
             ),
+            5 => 
+            array (
+                'id' => 6,
+                'username' => '120941',
+                'email' => 'kradjumli@gmail.com',
+                'email_verified_at' => NULL,
+                'password' => '$2y$10$FPu76Vm3x9n8G0kLfkyl9u6OgTJ4TemAIRR2YSh5eOYeAXSSi2znC',
+                'avatar' => 'avatar.jpg',
+                'role' => 'Student',
+                'is_active' => 1,
+                'welcome_valid_until' => NULL,
+                'remember_token' => NULL,
+                'created_at' => '2023-01-24 16:36:52',
+                'updated_at' => '2023-01-24 16:36:52',
+            ),
         ));
         
         

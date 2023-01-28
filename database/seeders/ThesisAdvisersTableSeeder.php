@@ -43,6 +43,14 @@ class ThesisAdvisersTableSeeder extends Seeder
                 'created_at' => '2023-01-24 16:33:59',
                 'updated_at' => '2023-01-24 16:33:59',
             ),
+            3 => 
+            array (
+                'id' => 4,
+                'thesis_id' => 4,
+                'adviser_id' => 17,
+                'created_at' => '2023-01-26 13:37:49',
+                'updated_at' => '2023-01-26 13:37:49',
+            ),
         ));
         
         

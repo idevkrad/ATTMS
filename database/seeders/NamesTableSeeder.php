@@ -127,6 +127,51 @@ class NamesTableSeeder extends Seeder
                 'created_at' => '2023-01-20 23:33:58',
                 'updated_at' => '2023-01-20 23:33:58',
             ),
+            12 => 
+            array (
+                'id' => 13,
+                'firstname' => 'Kenneth',
+                'lastname' => 'Gonzales',
+                'is_researcher' => 1,
+                'created_at' => '2023-01-26 13:35:55',
+                'updated_at' => '2023-01-26 13:35:55',
+            ),
+            13 => 
+            array (
+                'id' => 14,
+                'firstname' => 'Andrew',
+                'lastname' => 'Javier',
+                'is_researcher' => 1,
+                'created_at' => '2023-01-26 13:36:13',
+                'updated_at' => '2023-01-26 13:36:13',
+            ),
+            14 => 
+            array (
+                'id' => 15,
+                'firstname' => 'Clemencia',
+                'lastname' => 'Filoteo',
+                'is_researcher' => 0,
+                'created_at' => '2023-01-26 13:36:43',
+                'updated_at' => '2023-01-26 13:36:43',
+            ),
+            15 => 
+            array (
+                'id' => 16,
+                'firstname' => 'Katherine',
+                'lastname' => 'Sinsuan',
+                'is_researcher' => 0,
+                'created_at' => '2023-01-26 13:37:04',
+                'updated_at' => '2023-01-26 13:37:04',
+            ),
+            16 => 
+            array (
+                'id' => 17,
+                'firstname' => 'Jamaica',
+                'lastname' => 'Delos Reyes',
+                'is_researcher' => 0,
+                'created_at' => '2023-01-26 13:37:25',
+                'updated_at' => '2023-01-26 13:37:25',
+            ),
         ));
         
         

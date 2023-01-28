@@ -82,6 +82,13 @@ class TagsTableSeeder extends Seeder
                 'created_at' => '2023-01-20 23:35:23',
                 'updated_at' => '2023-01-20 23:35:23',
             ),
+            9 => 
+            array (
+                'id' => 10,
+                'name' => 'Antibacterial',
+                'created_at' => '2023-01-26 13:35:22',
+                'updated_at' => '2023-01-26 13:35:22',
+            ),
         ));
         
         
