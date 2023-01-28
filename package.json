@@ -42,6 +42,7 @@
         "simplebar-vue3": "^0.1.6",
         "vue-datepicker-next": "^1.0.2",
         "vue-image-crop-upload": "^3.0.3",
+        "vue-pdf-embed": "^1.1.5",
         "vue-toast-notification": "^3.0.4",
         "vue3-loading-overlay": "^0.0.0"
     }

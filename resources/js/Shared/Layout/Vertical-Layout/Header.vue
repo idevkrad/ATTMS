@@ -131,7 +131,7 @@
                     </button>
                 </div>
 
-                <NotificationDocument></NotificationDocument>
+                <!-- <NotificationDocument></NotificationDocument> -->
                 <NotificationTravel></NotificationTravel>
 
                 <b-dropdown right variant="black" toggle-class="header-item" menu-class="dropdown-menu-end">

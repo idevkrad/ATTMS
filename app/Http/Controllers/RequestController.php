@@ -63,21 +63,20 @@ class RequestController extends Controller
 
     public function update(Request $request){
         $data = \DB::transaction(function () use ($request){
-
             $data = Req::findOrFail($request->id);
 
-
+            if($request->status == 'approve'){
                 if($data->end == null){
                     $time = ($request->time == 'Day') ? ' days' : ' hours';
                     $add = $request->count.$time;
-                    // dd($add);
                     $end = date('Y-m-d H:i:s', strtotime($add));
-                    // dd($end);
                     $data->end = $end;
                 }
-                $data->start = now();
-
-            $data->status_id = ($request->type == 'View') ? 4 : 3;
+                $data->status_id = ($request->type == 'View') ? 4 : 3;
+            }else if($request->status == 'claim'){
+                $data->status_id = 4;
+            }
+            $data->start = now();
             $data->save();
 
             return $data;
@@ -104,6 +103,19 @@ class RequestController extends Controller
             (\Auth::user()->role == 'Student') ? $query->whereIn('status_id',[3,4]) : '';
             (\Auth::user()->role != 'Student') ? $query->where('is_seen_to',0) : $query->where('is_seen_from',0);
             $data = $query->orderBy('created_at','ASC')->paginate(1)->withQueryString();
+
+            return $data = RequestResource::collection($data);
+        }else if($request->type == 'lists'){
+            $query = Req::query();
+            $query->with('status','user.profile.course');
+            $query->with('borrows.hardbound.thesis','borrows.hardbound.office','view.thesis');
+            $query->when($request->department, function ($query, $department) {
+                $query->whereHas('department',function ($query) use ($department) {
+                    $query->where('id',$department);
+                });
+            });
+            $query->whereIn('status_id',[2,3,4]);
+            $data = $query->orderBy('created_at','ASC')->get();
 
             return $data = RequestResource::collection($data);
         }else{

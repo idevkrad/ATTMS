@@ -33,7 +33,7 @@ class ThesisRequest extends FormRequest
             'researchers' => 'required|array|min:1',
             'hardbounds' => 'required_if:has_hardbound,true|array|min:1',
             'tags' => 'required|array|min:1',
-            'files' => 'sometimes|required',
+            'files' => 'sometimes|nullable',
             'files.*' => 'mimes:pdf|max:15000'
             // 'course_id' => 'sometimes|required_if:role,Student',
             // 'course_id' => 'sometimes|required_if:role,Student',

@@ -105,7 +105,8 @@ export default {
             deep: true,
             handler(val = null) {
                 if(val != null && val !== ''){
-                    this.message(val.data);
+                    // this.message(val.data);
+                    the.fetch();
                 }
             },
         },

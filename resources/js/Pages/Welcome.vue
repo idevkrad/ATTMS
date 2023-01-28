@@ -6,10 +6,14 @@
         <div>
             <nav class="navbar navbar-expand-lg navigation fixed-top sticky" id="navbar">
                 <div class="container">
-                    <a class="navbar-logo" href="/">
-                        <img src="images/logo-dark.png" alt height="19" class="logo logo-dark" />
-                        <img src="images/logo-light.png" alt height="19" class="logo logo-light" />
-                    </a>
+                   <ul class="navbar-nav ms-auto" id="topnav-menu">
+                            <li class="nav-item">
+                                <a class="nav-link" href="javascript: void(0);">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <Link href="/myrequests" class="nav-link">My Requests</Link>
+                            </li>
+                        </ul>
 
                     <button type="button" class="btn btn-sm px-3 font-size-16 d-lg-none header-item"
                         data-toggle="collapse" data-target="#topnav-menu-content" @click="toggleMenu()">
@@ -18,12 +22,7 @@
 
                     <div class="collapse navbar-collapse" id="topnav-menu-content">
                         <ul class="navbar-nav ms-auto" id="topnav-menu">
-                            <li class="nav-item">
-                                <a class="nav-link" href="javascript: void(0);">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="javascript: void(0);">Requests</a>
-                            </li>
+                           
                         </ul>
                         
                         <Notification></Notification>

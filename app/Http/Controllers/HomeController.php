@@ -62,4 +62,13 @@ class HomeController extends Controller
             'type' => 'bxs-check-circle'
         ]); 
     }
+
+    public function myrequests(Request $request){
+        return inertia('Landing/Request');
+    }
+
+    public function pdf(Request $request){
+        
+        return inertia('Modules/PDF/Viewer',['code' => $request->foo]);
+    }
 }

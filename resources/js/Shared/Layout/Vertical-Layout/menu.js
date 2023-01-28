@@ -9,8 +9,8 @@ export const menuItems = [{
         label: "Home",
         icon: "bx-home-circle",
         link: "/home",
-        component: "Home/Index",
-        name: "Home",
+        component: "Modules/Home/Index",
+        name: "Modules/Home",
         user: [],
     },
     {
