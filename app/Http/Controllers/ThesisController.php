@@ -10,6 +10,7 @@ use App\Http\Resources\ThesisResource;
 class ThesisController extends Controller
 {
     public function index(Request $request){
+        echo phpinfo();
         if($request->search){
             $data = ThesisResource::collection(
                 Thesis::query()
