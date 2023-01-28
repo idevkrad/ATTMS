@@ -10,7 +10,7 @@ use App\Http\Resources\ThesisResource;
 class ThesisController extends Controller
 {
     public function index(Request $request){
-        echo phpinfo();
+        // echo phpinfo();
         dd(ini_get('upload_max_filesize'), ini_get('post_max_size'));
         if($request->search){
             $data = ThesisResource::collection(
