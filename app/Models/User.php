@@ -75,7 +75,7 @@ class User extends Authenticatable
     }
 
     public function scopeNew($query, $request){
-        $user = $query->create(array_merge($request, ['password' => bcrypt('adzuattms')]));
+        $user = $query->create(array_merge($request, ['password' => bcrypt('adzuattms'),'is_active' => 1]));
         $user->profile()->create($request);
         return $user;
     }

@@ -115,7 +115,7 @@
                         <div class="row mt-n5">
                             <div class="col-lg-12">
                                 <div>
-                                    <div class="table-responsive">
+                                    <div class="table-responsive" v-if="lists.length > 0">
                                         <table
                                             class="table project-list-table table-nowrap table-centered table-borderless align-middle">
                                             <thead>
@@ -155,6 +155,9 @@
                                                 
                                             </tbody>
                                         </table>
+                                    </div>
+                                    <div v-else>
+                                        <div class="alert alert-warning" role="alert">No thesis found. Search a thesis now</div>
                                     </div>
                                 </div>
                             </div>
@@ -252,7 +255,7 @@
             }, 300),
 
             fetch(page_url){
-                this.tag = [];
+                this.tag = []; this.lists = []; this.view = false;
                 if(this.tags.length > 0){
                     for(let i = 0; i < this.tags.length; i++){
                         this.tag.push(this.tags[i].id)

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->smallIncrements('id');
             $table->string('reference',30)->unique();
             $table->boolean('is_borrowed');
+            $table->boolean('is_walkin')->default(0);
             $table->datetime('start')->nullable();
             $table->datetime('end')->nullable();
             $table->boolean('is_seen_to')->default(0);

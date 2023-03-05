@@ -140,6 +140,7 @@
                     preserveScroll: true,
                     onSuccess: (response) => {
                         this.showModal = false;
+                        this.user = {};
                     }
                 });
             },

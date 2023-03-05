@@ -1,5 +1,5 @@
 <template>
-    <!-- {{ auth}} -->123321
+    {{ auth}} 
 </template>
 <script>
 

@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Thesis;
+use App\Models\Request as Req;
 use App\Models\Registration;
 use App\Http\Requests\RegistrationRequest;
 use App\Http\Resources\DefaultResource;
 use App\Http\Resources\SearchResource;
+use App\Providers\RouteServiceProvider;
 
 class HomeController extends Controller
 {
@@ -43,7 +45,31 @@ class HomeController extends Controller
             return $data;
         }else{
             if(\Auth::check()){
-                return inertia('Welcome');
+                if(\Auth::user()->role != 'Student'){
+                    if(\Auth::user()->role == 'Thesis Handler'){
+                        $dept_id = \Auth::user()->profile->department_id;
+
+                        $array = [
+                            'Total Theses' => Thesis::where('department_id',$dept_id)->count(),
+                            'Total Borrow Request' => Req::whereHas('user',function ($query) use ($dept_id) {
+                                $query->whereHas('profile',function ($query) use ($dept_id) {
+                                    $query->where('department_id',$dept_id);
+                                });
+                            })->whereIn('status_id',[4,5])->where('is_borrowed',1)->count(),
+                            'Total View Request' => Req::whereHas('user',function ($query) use ($dept_id) {
+                                $query->whereHas('profile',function ($query) use ($dept_id) {
+                                    $query->where('department_id',$dept_id);
+                                });
+                            })->whereIn('status_id',[4,5])->where('is_borrowed',0)->count(),
+                        ];
+
+                        return inertia('Modules/Home/Handler',['counts' => $array]);
+                    }else{
+                        return inertia('Modules/Home/Index');
+                    }
+                }else{
+                    return inertia('Welcome');
+                }
             }else{
                 return inertia('Public');
             }

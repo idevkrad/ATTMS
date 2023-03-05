@@ -1,5 +1,5 @@
 <template>
-    <b-modal v-model="showModal" @ok="create($event)" id="create" size="lg" title="Create Policy" no-close-on-backdrop centered>
+    <b-modal v-model="showModal" @ok="create($event)" id="create" size="lg" :title="(editable) ? 'Update Policy' : 'Create Policy'" no-close-on-backdrop centered>
         <div class="row" style="margin-right: 10px; margin-left: 10px;">
             <div class="col-md-12">
                 <b-form class="customform">
@@ -137,6 +137,7 @@
 
         methods: {
             show() {
+                this.hide();
                 this.showModal = true;
             },
 
@@ -180,6 +181,7 @@
             hide(){
                 (this.form.hasOwnProperty('reset') ) ? this.form.reset().clearErrors() : this.policy = {};
                 this.showModal = false;
+                this.editable =  false;
             }
         }
     }

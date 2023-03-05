@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Request as Req;
+use App\Models\RequestBorrow;
 use App\Models\ThesisHardbound;
 use Illuminate\Http\Request;
 use App\Http\Resources\RequestResource;
@@ -75,6 +76,9 @@ class RequestController extends Controller
                 $data->status_id = ($request->type == 'View') ? 4 : 3;
             }else if($request->status == 'claim'){
                 $data->status_id = 4;
+            }else if($request->status == 'return'){
+                $data->status_id = 5;
+
             }
             $data->start = now();
             $data->save();
@@ -114,6 +118,7 @@ class RequestController extends Controller
                     $query->where('id',$department);
                 });
             });
+            $query->where('user_id',\Auth::user()->id);
             $query->whereIn('status_id',[2,3,4]);
             $data = $query->orderBy('created_at','ASC')->get();
 

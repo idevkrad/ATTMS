@@ -106,7 +106,7 @@ export default {
             handler(val = null) {
                 if(val != null && val !== ''){
                     // this.message(val.data);
-                    the.fetch();
+                    this.fetch();
                 }
             },
         },

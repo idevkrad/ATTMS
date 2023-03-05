@@ -40,4 +40,21 @@ class PolicyController extends Controller
             'type' => 'bxs-check-circle'
         ]); 
     }
+
+    public function update(PolicyRequest $request)
+    {   
+        $data = \DB::transaction(function () use ($request){
+          
+            $data = Policy::findOrFail($request->id);
+            $data->update($request->except('editable'));
+            $data = Policy::findOrFail($request->id);
+            return $data;
+        });
+        
+        return back()->with([
+            'message' => 'Policy updated successfully. Thanks',
+            'data' => new PolicyResource($data),
+            'type' => 'bxs-check-circle'
+        ]); 
+    }
 }

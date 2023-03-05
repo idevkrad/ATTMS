@@ -23,7 +23,7 @@
                 <p class="font-size-13 text-muted mb-0">{{request.created_at }}</p>
             </div>
         </div>
-        <div class="row font-size-12 mt-3" v-if="request.status.id == 3">
+        <div class="row font-size-12 mt-3" v-if="request.status.id == 3 || request.status.id == 4">
             <div class="col-sm-6">
                 <h6 class="font-size-12"><i class="bx bx-building text-info"></i> Office</h6>
                 <p class="font-size-13 text-muted mb-0">{{ request.location_office }}</p>
@@ -43,6 +43,7 @@
             <b-button @click="showModal=false" variant="secondary" block>Cancel</b-button>
             <b-button v-if="$page.props.auth.data.role != 'Student' && request.status.id == 2" @click="create('approve')" variant="primary" :disabled="form.processing" block>Approve</b-button>
             <b-button v-if="$page.props.auth.data.role != 'Student' && request.status.id == 3" @click="create('claim')" variant="primary" :disabled="form.processing" block>Claimed</b-button>
+            <b-button v-if="$page.props.auth.data.role != 'Student' && request.status.id == 4" @click="create('return')" variant="primary" :disabled="form.processing" block>Returned</b-button>
         </template>
     </b-modal>
 </template>

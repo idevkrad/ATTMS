@@ -140,11 +140,14 @@
                             <option value="" selected disabled>Select</option>
                             <option :value="1">True</option>
                             <option :value="0">False</option>
-                        </select>
+                        </select><button type="button" @click="deleteRow(index)" class="btn btn-primary btn-sm mb-1" :disabled="del"> <i class='bx bx-trash'></i></button>
                     </div>
-                    <button type="button" @click="deleteRow(index)" class="btn btn-primary btn-sm mb-1" :disabled="del"> <i class='bx bx-trash'></i></button>
+                    
                 </div>
             </div>
+            <progress v-if="form.progress" :value="form.progress.percentage" max="100">
+      {{ form.progress.percentage }}%
+    </progress>
         </div>
         <template v-slot:footer>
             <b-button @click="hide()" variant="secondary" block>Cancel</b-button>

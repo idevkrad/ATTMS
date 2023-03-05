@@ -18,10 +18,10 @@ return new class extends Migration
             $table->tinyIncrements('id');
             $table->text('description');
             $table->boolean('is_borrowable')->default(0);
-            $table->integer('borrow_count')->default(0);
+            $table->integer('borrow_count')->nullable();
             $table->string('borrow_time',20)->nullable();
             $table->boolean('is_viewable')->default(0);
-            $table->integer('view_count')->default(0);
+            $table->integer('view_count')->nullable();
             $table->string('view_time',20)->nullable();
             $table->boolean('is_within')->default(0);
             $table->tinyInteger('department_id')->unsigned()->nullable();

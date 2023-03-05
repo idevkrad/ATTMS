@@ -76,11 +76,11 @@
                                     <span v-else class="badge bg-danger fs-11">Inactive</span>
                                 </td>
                                 <td class="text-end">
-                                    <a v-b-tooltip.hover title="Employee Activation" class="me-3 " @click="update(list)">
+                                    <a v-b-tooltip.hover title="User Activation" class="me-3 " @click="update(list)">
                                         <i v-bind:class="(list.is_active == 1) ? 'text-success bx bx-lock-open' : 'text-dark bx bxs-lock'"></i>
                                     </a>
                                     <a v-b-tooltip.hover title="Edit User" class="me-3 text-warning" @click="edit(list)"><i class='bx bx-edit-alt' ></i></a>
-                                    <a class="text-info" v-b-tooltip.hover title="Verify Employee"  @click="verify(list)"><i class='bx bx-mail-send'></i></a>
+                                    <a class="text-info" v-b-tooltip.hover title="Verify User"  @click="verify(list)"><i class='bx bx-mail-send'></i></a>
                                 </td>
                             </tr>
                             <tr v-if="lists.length == 0">

@@ -9,7 +9,7 @@ Route::get('search', [App\Http\Controllers\HomeController::class, 'index']);
 Route::post('/pdf', [App\Http\Controllers\HomeController::class, 'pdf']);
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/home', function () {  return inertia('Modules/Home/Index'); });
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
     Route::resource('registrants', App\Http\Controllers\RegistrationController::class);
     Route::resource('requests', App\Http\Controllers\RequestController::class);
     Route::resource('users', App\Http\Controllers\UserController::class);
